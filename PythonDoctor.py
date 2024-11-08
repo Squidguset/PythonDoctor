@@ -1,17 +1,17 @@
 import random as rand
 import json
-import enum
+from enum import Enum
 import colour as col
 
 
-class EventType(enum):
+class EventType(Enum):
         SetTheme = "SetTheme"
         SetVFXPreset = "SetVFXPreset"
         SetBackgroundColor = "SetBackgroundColor"
         SetForeground = "SetForeground"
 
 
-class PythonDoctor:
+class PythonDoctor():
 
     
 
@@ -62,11 +62,5 @@ class PythonDoctor:
             "colorPallete":[]
         })
 
-    def newEvent(Bar:int,Beat:int,Type:EventType):
-        
-        return({"bar":Bar,"beat":Beat,"type":Type})
-    
-
-
-
-            
+    def newEvent(Bar:int,Beat:int,Type:EventType):  
+        return({"bar":Bar,"beat":Beat,"type":Type.value})
