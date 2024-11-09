@@ -1,6 +1,6 @@
 import random as rand
 import json
-import enum
+from enum import Enum as enum
 import colour as col
 
 class Category(enum):
@@ -74,7 +74,7 @@ class EventType(enum): #This is a list of all the event types in the game. 1st v
     PulseFreeTimeBeat = ("PulseFreeTimeBeat", Category.Rows, 4)
 
 
-class PythonDoctor:
+class PythonDoctor():
 
     
 
@@ -125,11 +125,5 @@ class PythonDoctor:
             "colorPallete":[]
         })
 
-    def newEvent(Bar:int,Beat:int,Type:EventType):
-        
-        return({"bar":Bar,"beat":Beat,"type":Type})
-    
-
-
-
-            
+    def newEvent(Bar:int,Beat:int,Type:EventType):  
+        return({"bar":Bar,"beat":Beat,"type":Type.value})
