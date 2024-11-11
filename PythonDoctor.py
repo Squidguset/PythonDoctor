@@ -292,14 +292,14 @@ class PythonDoctor():
     
 
     def newRow(Room:int,Row:int,Rowtype:RowType,Character:Characters|str,Beatsound:str|BeatSounds):
-        Charactera = Character
-        Beatsounda = Beatsound
+        this_Character = Character
+        this_Beatsound = Beatsound
         
         if type(Character) == Characters:
-            Charactera = Character.value
+            this_Character = Character.value
         if type(Beatsound) == BeatSounds:
-            Beatsounda = Beatsound.value
-        return({"rooms":[Room],"row":Row,"rowType":Rowtype.value,"player": "P1", "character": Charactera, "pulseSound": Beatsounda})
+            this_Beatsound = Beatsound.value
+        return({"rooms":[Room],"row":Row,"rowType":Rowtype.value,"player": "P1", "character": this_Character, "pulseSound": this_Beatsound})
     
 
     def addRowtoLevel(Level:json,Row:json):
