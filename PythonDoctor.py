@@ -184,6 +184,19 @@ class BeatSounds(enum):
     TIMBALE_HIGH = "Timbale High"
     TIMBALE_LOW = "Timbale Low"
 
+class ClapSounds(enum):
+    CLAP_HIT = "Clap Hit"
+    REVERB_CLAP = "Reverb Clap"
+    CLAP_HIT_2 = "Clap Hit 2"
+    CLAP_HIT_MASSIVE_PRE_ECHO = "Clap Hit Massive Pre Echo"
+    CLAP_HIT_ECHO = "Clap Hit Echo"
+    SNARE_ACOUSTIC_2 = "Snare Acoustic 2"
+    SNARE_ACOUSTIC_4 = "Snare Acoustic 4"
+    SNARE_HOUSE = "Snare House"
+    SNARE_VAPOR = "Snare Vapor"
+    CLAP_HIT_CPU = "Clap Hit CPU"
+
+
 class PythonDoctor():
 
     
