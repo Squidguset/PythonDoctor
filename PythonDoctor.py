@@ -215,7 +215,7 @@ class PythonDoctor():
     "specialArtistType": "None", 
     "artistPermission": "", 
     "artistLinks": "soundcloud.com/fizzd", 
-    "author": "Miner", 
+    "author": "PythonDoctor", 
     "difficulty": "Medium", 
     "seizureWarning": False, 
     "previewImage": "", 
@@ -225,8 +225,8 @@ class PythonDoctor():
     "previewSongDuration": 10, 
     "songNameHue": 0, 
     "songLabelGrayscale": False, 
-    "description": "This is a cool level!", 
-    "tags": "slow, guitar, 2p", 
+    "description": "Level Template by PythonDoctor", 
+    "tags": "stuff", 
     "separate2PLevelFilename": "", 
     "canBePlayedOn": "OnePlayerOnly", 
     "firstBeatBehavior": "RunNormally", 
@@ -270,7 +270,7 @@ class PythonDoctor():
 		        "7092beff",
 		        "a349a4ff",
 		        "c8bfe7ff",
-		        "00000000"
+		        "370691ff"
                 ]
         })
 
@@ -308,6 +308,6 @@ class PythonDoctor():
         return(output)
     
     def exportLevel(Level:json,Filepath:str):
-        a = open(Filepath, "w")
-        a.write(json.dumps(Level))
-        a.close
+        level = open(Filepath, "w")
+        level.write(json.dumps(Level))
+        level.close
