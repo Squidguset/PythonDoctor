@@ -78,7 +78,7 @@ class EventType(enum): #This is a list of all the event types in the game. 1st v
     PulseFreeTimeBeat = ("PulseFreeTimeBeat", Category.Rows, 4)
 
 
-class Character(enum):
+class Characters(enum):
     ADOG = "Adog"
     ALLISON = "Allison"
     ATHLETE = "Athlete"
@@ -291,11 +291,23 @@ class PythonDoctor():
         return(output)
     
 
-    def newRow(Room:int,Row:int,Rowtype:RowType,Character:str,Beatsound:str):
-        return({"rooms":[Room],"row":Row,"rowType":Rowtype.value,"player": "P1", "character": Character, "pulseSound": Beatsound})
+    def newRow(Room:int,Row:int,Rowtype:RowType,Character:Characters|str,Beatsound:str|BeatSounds):
+        Charactera = Character
+        Beatsounda = Beatsound
+        
+        if type(Character) == Characters:
+            Charactera = Character.value
+        if type(Beatsound) == BeatSounds:
+            Beatsounda = Beatsound.value
+        return({"rooms":[Room],"row":Row,"rowType":Rowtype.value,"player": "P1", "character": Charactera, "pulseSound": Beatsounda})
     
 
     def addRowtoLevel(Level:json,Row:json):
         output = Level
         output["rows"].append(Row)
         return(output)
+    
+    def exportLevel(Level:json,Filepath:str):
+        a = open(Filepath, "w")
+        a.write(json.dumps(Level))
+        a.close
