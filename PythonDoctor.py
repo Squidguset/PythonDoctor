@@ -3,6 +3,10 @@ import json
 from enum import Enum as enum
 
 
+class RowType(enum):
+    Classic = "Classic"
+    OneShot = "Oneshot"
+
 class Category(enum):
     Sounds = "Sounds"
     Rows = "Rows"
@@ -163,4 +167,12 @@ class PythonDoctor():
 
         return(output)
     
+
+    def newRow(Room:int,Row:int,Rowtype:RowType,Character:str,Beatsound:str):
+        return({"rooms":[Room],"row":Row,"rowType":Rowtype.value,"player": "P1", "character": Character, "pulseSound": Beatsound})
     
+
+    def addRowtoLevel(Level:json,Row:json):
+        output = Level
+        output["rows"].append(Row)
+        return(output)
