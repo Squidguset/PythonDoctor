@@ -1,7 +1,7 @@
 import random as rand
 import json
 from enum import Enum as enum
-import colour as col
+
 
 class Category(enum):
     Sounds = "Sounds"
@@ -122,8 +122,45 @@ class PythonDoctor():
             "decorations":[],
             "conditionals":[],
             "bookmarks":[],
-            "colorPallete":[]
+            "colorPallete":[
+                "000000ff",
+		        "ffffffff",
+		        "7f7f7fff",
+		        "c3c3c3ff",
+		        "880015ff",
+		        "b97a57ff",
+		        "ff0000ff",
+		        "ffaec9ff",
+		        "ff7f27ff",
+		        "ffc90eff",
+		        "fff200ff",
+		        "efe4b0ff",
+		        "22b14cff",
+		        "b5e61dff",
+		        "00a2e8ff",
+		        "99d9eaff",
+		        "3f48ccff",
+		        "7092beff",
+		        "a349a4ff",
+		        "c8bfe7ff",
+		        "00000000"
+                ]
         })
 
-    def newEvent(Bar:int,Beat:int,Type:EventType):  
-        return({"bar":Bar,"beat":Beat,"type":Type.value})
+    def newEvent(Bar:int,Beat:int,Type:EventType,*Params:json):  
+        output = {"bar":Bar,"beat":Beat,"type":Type.value[0]}
+        for x in Params:
+            output = output | x
+
+        
+        return(output)
+    
+
+    def addEventToLevel(Level:json,*Event:json):
+        output = Level
+        for x in Event:
+            output["events"].append(x)
+
+        return(output)
+    
+    
