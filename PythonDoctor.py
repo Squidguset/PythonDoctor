@@ -214,7 +214,7 @@ class PythonDoctor():
     "song": "Intimate", 
     "specialArtistType": "None", 
     "artistPermission": "", 
-    "artistLinks": "e.g. soundcloud.com/fizzd", 
+    "artistLinks": "soundcloud.com/fizzd", 
     "author": "Miner", 
     "difficulty": "Medium", 
     "seizureWarning": False, 
@@ -249,7 +249,7 @@ class PythonDoctor():
             "decorations":[],
             "conditionals":[],
             "bookmarks":[],
-            "colorPallete":[
+            "colorPalette":[
                 "000000ff",
 		        "ffffffff",
 		        "7f7f7fff",
